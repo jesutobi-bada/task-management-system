@@ -8,9 +8,9 @@ interface TableProps {
 
 const TodoTable: React.FC<TableProps> = ({ data }) => {
   return (
-    <div className="overflow-x-auto overflow-y-auto rounded-lg border-[1.5px] border-primary flex-1 no-scrollbar h-fit">
+    <div className="overflow-x-auto overflow-y-auto rounded-lg border-[1.5px] border-primary flex-1 no-scrollbar h-auto">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500">
-        <thead className="sticky top-0 z-10 bg-secondary-light h-16 capitalize text-secondary font-semibold border-b-[1.5px] border-primary">
+        <thead className="sticky top-0 z-10 bg-secondary-light h-12 capitalize text-secondary font-semibold border-b-[1.5px] border-primary">
           <tr>
             <th
               scope="col"
@@ -39,13 +39,13 @@ const TodoTable: React.FC<TableProps> = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.todos.map((todo, index) => (
-            <tr key={index} className="bg-white border-b border-primary h-16">
-              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+          {data.data.map((todo, index) => (
+            <tr key={index} className="bg-white border-b border-primary h-12">
+              <td className="px-6 font-medium text-gray-900 whitespace-nowrap h-12">
                 {todo.name}
               </td>
-              <td className="px-6 py-4">{todo.date}</td>
-              <td className="px-6 py-4">
+              <td className="px-6 h-12">{todo.date}</td>
+              <td className="px-6 h-12">
                 <div className="flex -space-x-2">
                   {todo.assignee.slice(0, 2).map((name, nameIndex) => (
                     <Avatar key={nameIndex} firstName={name.firstName} lastName={name.lastName} src={name.profilePicture} />
@@ -57,22 +57,22 @@ const TodoTable: React.FC<TableProps> = ({ data }) => {
                   )}
                 </div>
               </td>
-              <td className="px-6 py-4 flex items-center gap-2">
+              <td className="px-6 flex items-center gap-2 h-12">
                 {todo.priority === "Important" && (
-                  <Flag variant="Bold" className="text-important" />
+                  <Flag variant="Bold" className="text-important" size={18} />
                 )}
                 {todo.priority === "Urgent" && (
-                  <Flag variant="Bold" className="text-urgent" />
+                  <Flag variant="Bold" className="text-urgent" size={18} />
                 )}
                 {todo.priority === "Medium" && (
-                  <Flag variant="Bold" className="text-medium" />
+                  <Flag variant="Bold" className="text-medium" size={18} />
                 )}
                 {todo.priority}
               </td>
             </tr>
           ))}
         </tbody>
-        <tfoot className="sticky bottom-0 z-10 bg-secondary-light h-16 border-t-[1.5px] border-primary">
+        <tfoot className="sticky bottom-0 z-10 bg-secondary-light h-12 border-t-[1.5px] border-primary">
           <tr>
             <td
               colSpan={5}

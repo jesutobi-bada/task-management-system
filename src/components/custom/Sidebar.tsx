@@ -163,8 +163,9 @@ const Sidebar = () => {
         p-3
         space-y-10
         transition-all duration-300 ease-in-out
-        ${isCollapsed ? "w-20" : "lg:w-1/4"}
+        ${isCollapsed ? "w-16" : "lg:w-1/5"}
         flex flex-col
+        text-sm
       `}
     >
       <div className={`flex justify-between items-center ${isCollapsed && "justify-center"}`}>
@@ -175,13 +176,13 @@ const Sidebar = () => {
           <Logo />
         </div>
         <button
-          className="bg-secondary-light rounded-lg h-10 w-10 flex items-center justify-center text-lg"
+          className="bg-secondary-light rounded-lg h-10 w-10 flex items-center justify-center"
           onClick={toggleSidebar}
         >
           {isCollapsed ? <LuArrowRightFromLine /> : <LuArrowLeftToLine />}
         </button>
       </div>
-      <div className="space-y-7 flex-1 overflow-y-auto no-scrollbar">
+      <div className="space-y-5 flex-1 overflow-y-auto no-scrollbar">
         {sidebarLinks.map((link, index) => {
           // Get the icon component
           const IconComponent = IconComponents[link.icon as keyof typeof IconComponents];
@@ -202,7 +203,7 @@ const Sidebar = () => {
                   }
                 }}
                 className={`
-                  flex items-center py-3 px-3 rounded-lg
+                  flex items-center py-2 px-3 rounded-lg
                   transition-colors duration-200
                   hover:bg-gray-100
                   ${isCollapsed ? "justify-center" : "gap-3"}
@@ -244,12 +245,12 @@ const Sidebar = () => {
                         key={childIndex}
                         className={`
                           flex items-center gap-3 py-2 px-3 rounded-lg
-                          ${isChildActive ? "bg-primary-light text-primary" : "text-gray-600"}
+                          ${isChildActive ? "bg-teal-50 text-teal-600" : "text-secondary"}
                           transition-colors duration-200
                           hover:bg-gray-100
                         `}
                       >
-                        <span className={`font-semibold ${isChildActive ? "text-primary" : "text-gray-600"}`}>
+                        <span className={`font-semibold ${isChildActive ? "text-teal-600" : "text-secondary"}`}>
                           {child.name}
                         </span>
                       </Link>

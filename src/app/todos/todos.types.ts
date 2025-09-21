@@ -13,7 +13,7 @@ export interface Todo {
 }
 
 export interface TodosData {
-  todos: Todo[];
+  data: Todo[];
   pagination: {
     current_page: number;
     total_pages: number;

@@ -13,7 +13,7 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
   const { firstName, lastName, src, ...rootProps } = props
 
   return (
-    <ArkAvatar.Root ref={ref} {...rootProps} className='w-8 h-8'>
+    <ArkAvatar.Root ref={ref} {...rootProps} className='w-6 h-6'>
       <ArkAvatar.Fallback className='w-full h-full rounded-full flex items-center justify-center text-secondary bg-primary/20'>
         {getInitials(firstName, lastName) || <User />}
       </ArkAvatar.Fallback>
