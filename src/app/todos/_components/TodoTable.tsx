@@ -1,9 +1,9 @@
 import { Flag } from "iconsax-reactjs";
 import Avatar from "@/components/custom/Avatar"
-import { TodosData } from "@/app/todos/todos.types";
+import { PaginatedResponse, Todo } from "../todos.store";
 
 interface TableProps {
-  data: TodosData;
+  data: PaginatedResponse<Todo>;
 }
 
 const TodoTable: React.FC<TableProps> = ({ data }) => {
@@ -41,31 +41,34 @@ const TodoTable: React.FC<TableProps> = ({ data }) => {
         <tbody>
           {data.data.map((todo, index) => (
             <tr key={index} className="bg-white border-b border-primary h-12">
-              <td className="px-6 font-medium text-gray-900 whitespace-nowrap h-12">
-                {todo.name}
+              <td className="px-6 font-medium text-gray-900 whitespace-nowrap h-12 capitalize">
+                {todo.title}
               </td>
-              <td className="px-6 h-12">{todo.date}</td>
+              <td className="px-6 h-12">{todo.dates?.startDate} - {todo.dates?.endDate}</td>
               <td className="px-6 h-12">
                 <div className="flex -space-x-2">
-                  {todo.assignee.slice(0, 2).map((name, nameIndex) => (
+                  {todo.assignees.slice(0, 2).map((name, nameIndex) => (
                     <Avatar key={nameIndex} firstName={name.firstName} lastName={name.lastName} src={name.profilePicture} />
                   ))}
-                  {todo.assignee.length > 2 && (
+                  {todo.assignees.length > 2 && (
                     <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-purple-50 text-xs font-semibold text-gray-600">
-                      +{todo.assignee.length - 2}
+                      +{todo.assignees.length - 2}
                     </div>
                   )}
                 </div>
               </td>
-              <td className="px-6 flex items-center gap-2 h-12">
-                {todo.priority === "Important" && (
+              <td className="px-6 flex items-center gap-2 h-12 capitalize">
+                {todo.priority === "important" && (
                   <Flag variant="Bold" className="text-important" size={18} />
                 )}
-                {todo.priority === "Urgent" && (
+                {todo.priority === "urgent" && (
                   <Flag variant="Bold" className="text-urgent" size={18} />
                 )}
-                {todo.priority === "Medium" && (
+                {todo.priority === "medium" && (
                   <Flag variant="Bold" className="text-medium" size={18} />
+                )}
+                {todo.priority === "low" && (
+                  <Flag variant="Bold" className="text-secondary/50" size={18} />
                 )}
                 {todo.priority}
               </td>

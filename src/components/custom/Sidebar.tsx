@@ -6,6 +6,7 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useSidebar } from "@/app/_utils/preferences.utils";
 
 
 // Icon component mapping
@@ -144,12 +145,13 @@ const sidebarLinks = [
 
 const Sidebar = () => {
   const pathname = usePathname();
-  const [isCollapsed, setIsCollapsed] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
-  const toggleSidebar = () => {
-    setIsCollapsed((prevState) => !prevState);
-  };
+    const { 
+    isCollapsed, 
+    toggleSidebar,  
+  } = useSidebar();
+
 
   const handleSubmenuClick = (name: string) => {
     setOpenSubmenu(openSubmenu === name ? null : name);

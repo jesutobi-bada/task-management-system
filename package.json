@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@ark-ui/react": "^5.25.0",
-    "@chakra-ui/react": "^3.27.0",
-    "@emotion/react": "^11.14.0",
     "iconsax-reactjs": "^0.0.8",
     "next": "15.5.3",
     "next-themes": "^0.4.6",
