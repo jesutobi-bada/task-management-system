@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Documentation 
 
-## Getting Started
 
-First, run the development server:
+## Project Technology Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js: The main framework for building the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+React: The core library for building the user interface. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+TypeScript: The programming language used. This provides type safety and better tooling.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+pnpm: The package manager used for managing project dependencies.
 
-## Learn More
+Zustand: A state management library used it to manage global or shared application state.
 
-To learn more about Next.js, take a look at the following resources:
+Zod: A schema declaration and validation library.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tailwind CSS: A utility-first CSS framework for styling the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+React Hook Form: A library for managing form state and validation. 
 
-## Deploy on Vercel
+Vercel: The platform for deployment. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Setup Instructions
+Follow these steps to get the development environment up and running.
+
+1. Clone the Repository
+First, clone the project repository to your local machine using Git.
+
+` git clone https://github.com/jesutobi-bada/task-management-system.git `
+
+2. Navigate to the Project Directory
+Change your current directory to the project's root folder.
+
+` cd todo-test `
+
+3. Install Dependencies
+
+This project uses pnpm as its package manager. You need to have pnpm installed on your system. If you don't have it, you can install it via npm:
+
+npm install -g pnpm
+
+Once pnpm is installed, run the following command to install all the project's dependencies:
+
+`pnpm install`
+
+4. Run the Development Server
+
+`pnpm run dev`
+
+5. Open the Application
+
+The development server will now be running. Open your web browser and navigate to the following URL to see the application:
+
+` http://localhost:3000`
+
+The page will automatically update as you make changes to the source files.

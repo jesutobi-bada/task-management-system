@@ -24,13 +24,15 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} antialiased w-screen h-screen overflow-hidden flex`}
       >
-          <Sidebar />
-          <div className="flex flex-col flex-1 h-screen">
-            <Topbar />
-            <div className="flex-1 overflow-y-auto bg-secondary-light p-2 flex">
+        <Sidebar />
+        <div className="flex flex-col flex-1 h-screen">
+          <Topbar />
+          <div className="flex-1 overflow-y-auto bg-secondary-light p-2 flex">
+            <div className="bg-white flex-1 rounded-lg flex flex-col h-full overflow-hidden space-y-2">
               {children}
             </div>
           </div>
+        </div>
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ interface TodoCardProps {
 const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
   return (
     <div className="rounded-lg p-2 bg-white space-y-4 flex-1 overflow-y-hidden ">
-      <h2 className="font-semibold">{todo.title}</h2>
+      <h2 className="font-semibold capitalize">{todo.title}</h2>
       <div className="flex items-center gap-3 text-sm">
         <Calendar className="text-secondary/50" size={18} />
         <p>
@@ -33,7 +33,7 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
           )}
         </div>
       </div>
-      <div className="flex gap-3 items-center text-sm">
+      <div className="flex gap-3 items-center text-sm capitalize">
         {todo.priority === "important" && (
           <Flag variant="Bold" className="text-important" size={18} />
         )}

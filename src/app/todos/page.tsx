@@ -1,6 +1,6 @@
 "use client";
 import {
-  AddCircle,
+  // AddCircle,
   RowHorizontal,
   RowVertical,
   SearchNormal1,
@@ -11,6 +11,7 @@ import TodoGrid from "./_components/TodoGrid";
 import { populateDummyTodos } from "./todos.utils";
 import { useTodoStore } from "./todos.store";
 import { useViewLayout } from "../_utils/preferences.utils";
+// import CreateTodoModal from "./_components/CreateTodoModal";
 
 const TodoLayout = () => {
   const [todoType, setTodoType] = useState<
@@ -20,6 +21,7 @@ const TodoLayout = () => {
   const handlePopulateData = () => {
     populateDummyTodos();
   };
+  // const [openCreateTodo, setOpenCreateTodo] = useState(false);
 
     const { 
     viewLayout, 
@@ -36,13 +38,13 @@ const TodoLayout = () => {
     setTodoType(todoType);
   };
   return (
-    <div className="bg-white flex-1 rounded-lg flex flex-col h-full overflow-hidden space-y-2">
+    <>
       <header className="border-b border-primary p-2 flex justify-between items-center">
         <h1 className="text-xl font-semibold">My Todos</h1>
         <div className="flex gap-3 items-center">
-          <button className="flex items-center gap-2 rounded-lg p-2 font-medium bg-teal-700/50 text-white text-sm">
+          {/* <button className="flex items-center gap-2 rounded-lg p-2 font-medium bg-teal-700/50 text-white text-sm">
             <AddCircle size={20} /> Add Task
-          </button>
+          </button> */}
           <button
             onClick={handlePopulateData}
             className="flex items-center gap-2 rounded-lg p-2 font-medium bg-teal-700/50 text-white text-sm"
@@ -100,10 +102,12 @@ const TodoLayout = () => {
           <TodoGrid />
         </div>
       )}
-    </div>
+      {/* {openCreateTodo && (
+        <CreateTodoModal open={openCreateTodo} onClose={() => setOpenCreateTodo(false)}
+        />
+      )} */}
+    </>
   );
 };
 
 export default TodoLayout;
-
-// TODO: Persist layout state
